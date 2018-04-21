@@ -1,4 +1,4 @@
-# Creative Tester - Live HTTP Headers
+# Creative Tester - Proxy, User Agents & Live HTTP Headers
 
 A free Chrome extension to test the Creative (ads) and Website using Live HTTP Headers, Proxy, User-Agent.
 - Geo testing & Mobile testing of the Websites and the Creatives (ads)
