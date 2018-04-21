@@ -1,0 +1,176 @@
+<!--
+* * Howdy!! p1ngM3 @D09r
+*
+* * Creative Tester - Live HTTP Headers
+* * Version 0.4.9
+* * Author: Dinesh Kumar
+* * https://www.linkedin.com/in/hack3r
+* * Repository: https://github.com/D09r
+*
+* -->
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="css/pop.css">
+    <noscript>Oops! Howdy, Your browser Javascript may be disabled or does not support it! Javascript is required to Feed Proxy works properly. To enable Javascript in Chrome, follow an instructions given at  http://activatejavascript.org/en/instructions/chrome</noscript>
+    <script type="text/javascript" src="ct/lib/jquery-2.2.1.min.js"></script>
+<!--    <script src="background.js"></script>-->
+</head>
+<body>
+    <h3 id="website" style="cursor:pointer" title="Creative Tester - Geo & Mobile testing, Live HTTP Headers">Creative Tester</a></h3>
+	<div id="menu">
+        <div id="settings" class="item">
+            <img src="img/fi/settings.png" />
+            <span title="Proxy Settings" id="menuPopSettings">Settings</span>
+	    </div>
+        <div id="help" class="item">
+            <img src="img/fi/help.png" />
+            <span title="Need help to setup proxy?" id="help">Help</span>
+	    </div>
+        <div id="separatorOptions" class="separator"></div>
+        <div id="httpHeader" class="item">
+            <img src="img/fi/tracking.png" />
+            <span title="Live HTTP Headers" id="help">HTTP Headers</span>
+	    </div>
+        <div id="separatorOptions" class="separator"></div>
+	    <div id="noProxy" class="item" title="Disable Proxy">
+            <img src="img/fi/unplugged.png" />
+	        <span title="Disable Proxy" id="menuPopNoProxy"> Disable Proxy</span>
+	    </div>
+	    <div id="sysProxy" class="item proxy" title="Switch to System Proxy">
+	        <img id="sysProxyImg" src="img/fi/system.png" />
+            <span id="menuPopSysProxy">System Proxy</span>
+	    </div>
+        <div id="separatorOptions" class="separator"></div>
+        <div id="newPPPop" class="item">
+            <img src="img/fi/add.png" />
+	        <span title="Create New Proxy Profile" id="menuPopNewProfile">Add Proxy</span>
+        </div>
+        <div id="separatorOptions" class="separator"></div>
+        <div class="item" title="Change User-Agent to retrieve browser, device specific content of websites. For example: Windows, iPhone or Android mobile device, tablet or Firefox, Internet Explorer, Edge, Safari, Opera browsers based content of websites.">
+	        <!--<span title="User Agent switcher" id="userAgent">User Agent</span>-->
+            <select id="uaList" name="Change User-Agent to retrieve UA specific content of websites">
+                <option selected="selected" value="uaNoOverride">User Agents - No override</option>
+                <optgroup label="Smartphones">
+                    <option value="uaiPh6P">iPhone 6 Plus</option>
+                    <option value="uaiPh6">iPhone 6</option>
+                    <option value="uaiPh5">iPhone 5</option>
+                    <option value="uaiPh4">iPhone 4</option>
+                    <option value="uaNexus7">Nexus 7</option>
+                    <option value="uaNexus6">Nexus 6</option>
+                    <option value="uaNexus6P">Nexus 6P</option>
+                    <option value="uaNexus5">Nexus 5</option>
+                    <option value="uaNexus4">Nexus 4</option>
+                    <option value="uaSamGalS6Edge">Samsung Galaxy S6 Edge</option>
+                    <option value="uaSamGalS5">Samsung Galaxy S5</option>
+                    <option value="uaSamGalS3">Samsung Galaxy S3</option>
+                    <option value="uaSamGalNote3">Samsung Galaxy Note 3</option>
+                    <option value="uaSamGalNote2">Samsung Galaxy Note II</option>
+                    <option value="uaLGOpL70">LG Optimus L70</option>
+                    <option value="uaMSLumia950">Microsoft Lumia 950</option>
+                    <option value="uaMSLumia550">Microsoft Lumia 550</option>
+                    <option value="uaMSLumia520">Microsoft Lumia 520</option>
+                    <option value="uaBBz30">BlackBerry Z30</option>
+                    <option value="uaBBbb10">BlackBerry - BB10</option>
+                    <option value="uaBB9910">BlackBerry - 9910</option>
+                </optgroup>
+                <optgroup label="Tablets">
+                    <option value="uaIPadMini">iPad Mini</option>
+                    <option value="uaIPad">iPad</option>
+                    <option value="uaNexus10">Nexus 10</option>
+                    <option value="uaNexus9">Nexus 9</option>
+                    <option value="uaBBPB">Blackberry Playbook</option>
+                    <option value="uaKindleFireHDX">Kindle Fire HDX</option>
+                    <option value="uaWinTabGeneric">Windows Tablet - Generic</option>
+                    <option value="uaSamGalTabS2">Samsung Galaxy Tab S2 9.7</option>
+                    <option value="uaBBPlayBook21">BlackBerry - PlayBook 2.1</option>
+                </optgroup>
+                <optgroup label="Android">
+                    <option value="uaAndroid4">Android (4.0.2) - Galaxy Nexus</option>
+                    <option value="uaAndroid2">Android (2.3) - Nexus S</option>
+                </optgroup>
+                <optgroup label="iOS">
+                    <option value="uaIOS9iPh">iPhone - iOS 9</option>
+                    <option value="uaIOS8iPh">iPhone - iOS 8</option>
+                    <option value="uaIOS9iPad">iPad - iOS 9</option>
+                    <option value="uaIPod">iPod</option>
+                </optgroup>
+                <optgroup label="Windows Phone">
+                    <option value="uaWinPh8u">Windows Phone 8.1</option>
+                    <option value="uaWinPh8">Windows Phone 8</option>
+                    <option value="uaWinPh7">Windows Phone 7</option>
+                </optgroup>
+                <optgroup label="Chrome">
+                    <option value="uaCr49Mac">Chrome 49 - Mac</option>
+                    <option value="uaCr47Win">Chrome 47 - Windows</option>
+                    <option value="uaCr47iPad">Chrome 47 - iPad</option>
+                    <option value="uaCr49iPh">Chrome 49 - iPhone</option>
+                    <option value="uaCr47AndTab">Chrome 47 - Android Tablet</option>
+                    <option value="uaCr47AndMob">Chrome 47 - Android Mobile</option>
+                    <option value="uaCr33Ubu">Chrome 33 - Ubuntu</option>
+                </optgroup>
+                <optgroup label="Firefox">
+                    <option value="uaFF45Mac">Firefox 45 - Mac</option>
+                    <option value="uaFF45Win">Firefox 45 - Windows</option>
+                    <option value="uaFF45iPh">Firefox 45 - iPhone</option>
+                    <option value="uaFF45AndTab">Firefox 45 - Android Tablet</option>
+                    <option value="uaFF45AndMob">Firefox 45 - Android Mobile</option>
+                    <option value="uaFF42Ubu">Firefox 42 - Ubuntu</option>
+                </optgroup>
+                <optgroup label="Internet Explorer/Edge">
+                    <option value="uaEdge">Microsoft Edge</option>
+                    <option value="uaIE11">Internet Explorer 11</option>
+                    <option value="uaIE10">Internet Explorer 10</option>
+                    <option value="uaIE9">Internet Explorer 9</option>
+                    <option value="uaIE8">Internet Explorer 8</option>
+                    <option value="uaIE7">Internet Explorer 7</option>
+                    <option value="uaIE6">Internet Explorer 6</option>
+                </optgroup>
+                <optgroup label="Safari">
+                    <option value="uaSafMac">Safari - Mac</option>
+                    <option value="uaSafWin">Safari - Windows</option>
+                    <option value="uaSafiPad">Safari - iPad</option>
+                    <option value="uaSafiPh">Safari - iPhone</option>
+                </optgroup>
+                <optgroup label="Opera">
+                    <option value="uaOpr33Mac">Opera 33 - Mac</option>
+                    <option value="uaOpr33Win">Opera 33 - Windows</option>
+                    <option value="uaOpr12Mac">Opera 12 - Mac</option>
+                    <option value="uaOpr12Win">Opera 12 - Windows</option>
+                </optgroup>
+                <optgroup label="Game Console">
+                    <option value="uaXboxOne">Xbox One</option>
+                    <option value="uaPS3355">Playstation 3 3.55</option>
+                    <option value="uaPS3200">Playstation 3 2.00</option>
+                    <option value="uaPSPort2">Playstation Portable 2.00</option>
+                    <option value="uaNin">Nintendo</option>
+                    <option value="uaArchos">Archos - Android 4.2.2</option>
+                    <option value="uaQuya">QUYA - Android OUYA 4.1.2</option>
+                </optgroup>
+                <optgroup label="Smart TV">
+                    <option value="uaSamSmartTV">Samsung Smart TV - Tizen 2 OS</option>
+                    <option value="uaSonySmartTV">Sony Smart TV KDL-42W650A</option>
+                </optgroup>
+                <optgroup label="Spider/Bot">
+                    <option value="uaGoogBot21">GoogleBot 2.1</option>
+                    <option value="uaGoogBot21SmartPh">GoogleBot 2.1 - Smartphone</option>
+                    <option value="uaBingBot2">Bingbot 2.0</option>
+                    <option value="uaYahooSlurp">Yahoo! Slurp</option>
+                    <option value="uaYandBot3">YandexBot 3.0</option>
+                </optgroup>
+                <optgroup label="Others">
+                    <option value="uaSamGearVR">Samsung Internet - Gear VR</option>
+                    <option value="uaKFireDesktop">Silk - Kindle Fire (Desktop View)</option>
+                    <option value="uaKFireMob">Silk - Kindle Fire (Mobile View)</option>
+                    <option value="uaMeeGoNokN9">MeeGo - Nokia N9</option>
+                </optgroup>
+            </select>
+        </div>
+        <div id="separatorOptionsCustom"></div>
+        <!-- Loads Proxy Profiles -->
+        <div id="proxies"></div>
+	</div>
+    <script src="js/popup.js"></script>
+</body>
+</html>

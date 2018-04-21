@@ -1,0 +1,207 @@
+/**
+* * Howdy!! p1ngM3 @D09r
+*
+* * Creative Tester - Live HTTP Headers
+* * Version 0.4.9
+* * Author: Dinesh Kumar
+* * https://www.linkedin.com/in/hack3r
+* * Repository: https://github.com/D09r
+*
+*/
+
+#proxyProfiles {
+    border: none;
+    border-bottom-style: none;
+}
+
+#proxyProfiles tr td {
+    white-space: nowrap;
+    border-style:none;
+    padding: 0;
+    border: none;
+}
+
+#proxyProfiles .templateRow, .rulesTable .templateRow {
+    display:flex;
+}
+
+table.fixed { table-layout:fixed; }
+
+.td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0.2em 0.6em;
+}
+.fixRow {
+    background-color: rgba(226,226,226,0.7);
+}
+table tr:hover {
+    background-color: rgba(3,3,102,0.1);
+    font-weight: 300;
+    cursor: pointer;
+}
+th {
+    padding-left: 0.2em;
+    background-color: #030366;
+    color: white;
+}
+tr {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    background-color: rgba(245,245,245,0.5);
+}
+.rmvbtn {
+    visibility: hidden;
+}
+.rmvbtnhide {
+    visibility: hidden;
+}
+table tr:hover .rmvbtn {
+    cursor: pointer;
+    visibility: visible;
+}
+
+#reloadTabChk, #timerFrameChk, #oAuthFrameChk {
+    cursor: pointer;
+}
+
+#alertSaveAuth, #alertSaveTime, #alertSaveReload, #alertNotify { 
+    visibility: hidden;
+}
+
+#fp-icon {
+    content: url(../img/fi/mars32.png);
+}
+
+#optionsPageBgIcon {
+    content: url(../img/fi/mars256.png);
+    opacity: 0.05;
+    bottom: 16;
+    right: 16;
+    position: fixed;
+    z-index: -1;
+}
+
+.tableTrClip {
+    padding-left:0.2em;
+    text-overflow:clip;
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.newProfileBtn {
+    float: right;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 6px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.newProfileBtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.newProfileBtn span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.newProfileBtn:hover span {
+  padding-right: 15px;
+}
+
+.newProfileBtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#tabEmptyTd {
+    height: 60px;
+}
+
+.faq {
+    font-size: 16px;
+    line-height:150%;
+}
+
+.faq a {
+    text-decoration: none;
+    color: #15C;
+}
+
+.faqAnswers {
+    display: none;
+    padding-left: 1em;
+    font-size: 14px;
+    margin: 2px;
+    z-index: -1;
+    padding-bottom: 2em;
+}
+
+#faq1NewProfileButton {
+    padding-left: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    content: url(../img/faq/newProfileButton.jpg);
+}
+
+#faq1NewProfileForm {
+    padding-left: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    content: url(../img/faq/newProxyProfileForm.jpg);
+}
+
+#faqNoProxy {
+    padding-left: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    content: url(../img/faq/noProxy.jpg);
+}
+
+#faqSystemProxy {
+    padding-left: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    content: url(../img/faq/systemProxy.jpg);
+}
+
+#faqEditProxyProfile {
+    padding-left: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    content: url(../img/faq/editProxyProfiles.jpg);
+}
+
+.fpIcon16 {
+    content: url(../img/fi/mars16.png);
+    vertical-align: text-top;
+}
+
+#unplugIcon {
+    content: url(../img/fi/unplugged.png);
+    vertical-align: text-top;
+}
+
+#sysIcon {
+    content: url(../img/fi/system.png);
+    vertical-align: text-top;
+}
+
+#httpIcon {
+    content: url(../img/fi/tracking.png);
+    vertical-align: text-top;
+}

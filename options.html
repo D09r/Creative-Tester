@@ -1,0 +1,255 @@
+<!--
+* * Howdy!! p1ngM3 @D09r
+*
+* * Creative Tester - Live HTTP Headers
+* * Version 0.4.9
+* * Author: Dinesh Kumar
+* * https://www.linkedin.com/in/hack3r
+* * Repository: https://github.com/D09r
+*
+* -->
+
+<html>
+<head>
+    <title>Proxy Settings - Chrome</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" type="image/png" href="img/fi/mars16.png" />
+    <link rel="stylesheet" type="text/css" href="css/chrome-bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/options.css" />
+    <link rel="stylesheet" type="text/css" href="css/proxyConfig.css" />
+    <script type="text/javascript" src="ct/lib/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="js/options-ui.js"></script>
+    <noscript>Oops! Hey, Your browser Javascript may be disabled or does not support it! Javascript is required to Creative Tester works properly. To enable Javascript in Chrome, follow an instructions given at  http://activatejavascript.org/en/instructions/chrome</noscript>
+    
+</head>
+<body class="chrome-bootstrap">
+    <div class="frame">
+        <div class="navigation">
+            <h1>
+                <a style="font-size:18px;color:030366;" content="Options" href="https://feedproxy.tumblr.com" target="_blank"></a>
+            </h1>
+
+            <ul class="menu">
+                <li>
+                    <a href="#general" id="menuListGeneral">General</a>
+                </li>
+                <li class="selected">
+                    <a href="#proxyProfiles" id="menuListProxyProfiles">Proxy Profiles</a>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li>
+                    <a href="#help" id="menuListHelp">Help</a>
+                </li>
+                <li>
+                    <a href="#about" id="menuListAbout">About</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Sections in Details -->
+        <div class="mainview view">
+            <div id="general">
+                <header><h1 content="General">General</h1></header>
+                <div class="content">
+                    <section>
+                        <br/>
+                        <div id="reloadTab" ><span class="indent"><input type="checkbox" id="reloadTabChk" /> 
+				            <label for="reloadTabChk" id="autoReload">Refresh Current Tab on Proxy Profile changes</label> <img id="alertSaveReload" src="img/fi/tick.png" width=10 height=10 />
+                            </span></div>
+                        <br/>
+                        <div id="timeOut" >
+                            <span class="indent"><input type="checkbox" id="timerFrameChk"/> 
+                                <label for="timerFrameChk" id="autoTimeout">Set TimeOut to disable Manual Proxy</label> <img id="alertSaveTime" src="img/fi/tick.png" width=10 height=10 />
+
+                                <div id="timerFrame" style="display:none">
+                                    <section>
+                                        <select id="timerOptions">
+                                            <option value="default" disabled selected="selected" id="defTimer">Choose</option>
+                                            <option for="timerOptions" id="timer10" value="10">10 mins</option>
+                                            <option for="timerOptions" id="timer20" value="20">20 mins</option>
+                                            <option for="timerOptions" id="timer30" value="30">30 mins</option>
+                                            <option for="timerOptions" id="timer60" value="60">60 mins</option>
+                                        </select>
+                                    </section>
+                                </div>
+                            </span>
+                        </div>
+                        <br/>
+                        <div id="notifyDiv" ><span class="indent"><input type="checkbox" id="notifyChk" /> 
+				            <label for="notifyChk" id="turnNotify">Turn On/Off Notifications</label> <img id="alertNotify" for="notifyChk" src="img/fi/tick.png" width=10 height=10 />
+                            </span></div>
+                        
+                        <br/>
+                        <input type="checkbox" id="oAuthFrameChk"><label for="oAuthFrameChk" id="persistentAuth"> Persistent Proxy Authentication</label> <img id="alertSaveAuth" src="img/fi/tick.png" width=10 height=10 />
+                            <div id="oAuthFrame" style="display:none">  
+                                <section>
+                                    <div>
+                                        <label>
+                                            <input type="text" id="username" size="20" placeholder="username" pattern=".{3,20}" required></input>
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <label>
+                                            <input type="password" id="password" size="20" placeholder="password" required disabled></input>
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <button id="usrPwdSaveBtn" value="Save" disabled>Save</button> 
+                                </section>
+                            </div>
+                    </section>
+                </div>
+                <div class="content">
+                    <h3>Backup<h3>
+                    <section>
+                        <div id="backup"></div>
+                    </section>
+                </div>
+            </div>
+            <!--Proxy Profiles Manager-->
+            <div id="proxyProfiles" class="selected">
+                <header><h1 content="Proxy Profiles">Proxy Profiles</h1></header>
+                <div class="content">
+                    
+                    <div style="padding-right:2em;padding-top:2em"><button class="newProfileBtn" type="button" id="newProxyProfile" title="Create a New Proxy Profile" style="font-family:Lucida Grande;size:22;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);vertical-align:middle"><span>Add Proxy</span></button></div>
+                        <div class="content">
+                            <table id="proTab" class="fixed" style="width:960px">
+                              <tr>
+                                <th style="width:14%">Profile</th>
+                                <th style="width:5%">Type</th>
+                                <th style="width:22%">Server</th>		
+                                <th style="width:5%">Port</th>
+                                <th style="width:260">BypassList</th>
+                              </tr>
+                                <!--
+								<tr id="tabEmptyTr">
+                                    <td colspan="5" id="tabEmptyTd" align='center'>Howdy! Looks like you haven't created any manual proxy profile, click <b>Add Proxy</b> to create one.</td>
+                                </tr>
+-->
+                            </table> 
+                        </div>
+                </div>
+            </div>
+
+            <div id="help">
+                <header><h1 content="help">Help</h1></header>
+                <div class="content">
+                    <h3 id="feedbackTitle">I'd love to hear your feedback!<h3>
+                    <section>
+                        <a class="feedback" target="_blank" id="feedbackLink">Write your invaluable comments</a>
+                    </section>
+                    <br>
+                    <h3 id="faq">FAQs<h3>
+                    <section>
+                        <div class="faq">
+                            <p><a href="#" id="faq1Ques" title="click to view answer">How to create a custom proxy profile?</a></p>
+                            <p class="faqAnswers" for="faq1Ques" id="faq1Ans">In Proxy Profiles, click <b>New Profile</b> button to create a new proxy profile.
+                            <span id="faq1NewProfileButton" title="click to view answer"></span><br>
+                            Type Profile Name, Protocol Type (optional), Proxy Server, Port, BypassList (optional) and click Save proxy settings to save your custom proxy profile.
+                            <span id="faq1NewProfileForm"></span>
+                            </p>
+                        </div>
+                        <div class="faq">
+                            <p><a href="#" id="faq2Ques" title="click to view answer">How to edit custom proxy profiles?</a></p>
+                            <p class="faqAnswers" for="faq2Ques" id="faq2Ans">In Proxy Profiles, click on the proxy profile which need to be edit.<br><span id="faqEditProxyProfile"></span></p>
+                        </div>
+                        <div class="faq">
+                            <p><a href="#" id="faq3Ques" title="click to view answer">How to disable proxy or to enable direct connection mode?</a></p>
+                            <p class="faqAnswers" for="faq3Ques" id="faq3Ans">Click <span class="fpIcon16"></span> icon on top right of Chrome window, and click <span id="unplugIcon"></span> <b>Disable Proxy</b> option to enable direct connection mode which disables proxy connection and traffic passes directly to internet.<br><span id="faqNoProxy"></span>
+                            </p>
+                        </div>
+                        <div class="faq">
+                            <p><a href="#" id="faq4Ques" title="click to view answer">How to enable system proxy connection mode?</a></p>
+                            <p class="faqAnswers" for="faq4Ques" id="faq4Ans">Click <span class="fpIcon16"></span> icon on top right of Chrome window, and click <span id="sysIcon"></span> <b>System Proxy</b> option to enable system proxy mode.<br><span id="faqSystemProxy"></span>
+                            </p>
+                        </div>
+                        <div class="faq">
+                            <p><a href="#" id="faq5Ques" title="click to view answer">How to export proxy profiles?</a></p>
+                            <p class="faqAnswers" for="faq5Ques" id="faq5Ans">In General, click <b>Export Proxy Profiles</b> to download backup file(Feed Proxy.json).</p>
+                        </div>
+                        <div class="faq">
+                            <p><a href="#" id="faq6Ques" title="click to view answer">How to track Live HTTP Headers?</a></p>
+                            <p class="faqAnswers" for="faq6Ques" id="faq6Ans">Click <span class="fpIcon16"></span> icon on top right of Chrome window, and click <span id="httpIcon"></span> <b>HTTP Headers</b> option which opens a creative tester on a new tab.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div id="about">
+                <header><h1 content="about">About</h1></header>
+                <div class="content">
+                    <h3><a href="https://chrome.google.com/webstore/detail/creative-tester-live-http/ibbejlanbkoaepocgcebajilofpnappm" target="_blank" rel="alternate" style="text-decoration:none"><span style="-webkit-padding-start:4px;font-size:24px;color:030366"><img src="img/fi/mars32.png" style="vertical-align: text-top;"/> Creative Tester - Geo & Mobile Testing, Live HTTP Headers</span></a></h3>
+                    <section>
+                        <p style="-webkit-padding-start: 26px;">Version 0.4.5<br><br></p>
+                    </section>
+                    <h3>Privacy Policies</h3>
+                    <section>
+                        <p>Information Collection And Use:</p>
+                        <p align="left">Upon enable Persistent Proxy Authentication, we may ask you to provide us with certain personally identifiable information that can be used to proxy server authentication behalf of you to intercept and handle Proxy Server Authentication WebRequest.
+                        <br><br><span>Other than that, <u>We don’t collect any Personal Identifiable Information</u></span>
+                        </p>
+                        <p>For Privacy Policy, please visit <a title="Feed Proxy Privacy Policy" href="https://feedproxy.tumblr.com/privacy-policy" rel="license" target="_blank">https://feedproxy.tumblr.com/privacy-policy</a></p>
+                    </section>
+                    <h3>Licenses</h3>
+                    <section>
+                        <p>Copyright (c) jQuery Foundation <a href="https://jquery.org/license/" rel="license" target="_blank">https://jquery.org/license/</a></p>
+                        <span>jQuery v2.2.1 Licensed under the <a href="https://tldrlegal.com/license/mit-license" target="_blank">MIT License</a></span>
+                        <br><br>
+                        <p>Copyright (c) 2012 Chrome Bootstrap Authors</p>
+                        <span>Chrome UI Bootstrap - Licensed under the <a href="https://opensource.org/licenses/MIT"  rel="license" target="_blank">MIT License</a></span>
+                        <br><br>
+                        <p>Icon used in BrowserAction and Promotional Image on CWS by <a href="http://www.flaticon.com" target="_blank">Freepik</a></p>
+                        <span>Licensed under a <a href="http://creativecommons.org/licenses/by/3.0/legalcode" taregt="_blank">Creative Commons Attribution 3.0 Unported (CC BY 3.0) Licence</a></span>
+                        <br><br>
+                        <p>Icons used in BrowserAction Page was released in <a href="http://p.yusukekamiyamane.com" target="_blank">Fugue Icons</a> pack by Yusuke Kamiyamane</p>
+                        <span>Licensed under a <a href="http://creativecommons.org/licenses/by/3.0/legalcode" taregt="_blank">Creative Commons Attribution 3.0 Unported (CC BY 3.0) Licence</a></span>
+                    </section>
+                </div>
+            </div>
+        </div>    
+
+    </div>
+    
+    <!-- New Proxy Profile Div -->
+    
+   
+    <div id="newPPContainer" style="display:none" role="main">
+        <h3>Manual Proxy Profile Settings<input type="button" title="Close" value="X" id="newPPClose"></h3>
+        <form id="proxyForm" method="POST">
+              <fieldset id="fixed_servers">
+                <legend>Manual Proxy</legend>
+                <section>
+                    <fieldset>
+                    <label for="proxyName">Profile Name </label><input type="text" name="proxyProfile" id="proxyName" size="20"  maxlength="20" placeholder="ProxyProfileName" pattern=".{3,20}" required title="Proxy profile name should be within 20 and minimum of 3 characters" autofocus>
+                    <fieldset>
+                  <fieldset>
+                    <legend></legend>
+                    <label for="proxyHostHttp">Proxy Server</label>
+                    <select id="proxyScheme" name="proxyScheme">
+                      <option value="http" for="proxyScheme" id="http" default>http://</option>
+                      <option value="https" for="proxyScheme" id="https">https://</option>
+                      <option value="quic" for="proxyScheme" id="ftp">ftp://</option>
+                      <option value="socks4" for="proxyScheme" id="socks4">socks4://</option>
+                      <option value="socks5" for="proxyScheme" id="socks5">socks5://</option>
+                    </select>
+                    <input type="text" name="proxyHostHttp" id="proxyServer" placeholder="proxyserver.com" size="30" pattern="([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+.*)" required title="Proxy server should be valid IP address or hostname. For example: 10.10.10.9 or proxyserver.com">
+                    <label for="proxyPortHttp">Port</label>
+                    <input type="text" name="proxyPortHttp" id="proxyPort" class="port" placeholder="8080" pattern="[0-9]{2,5}" required title="Proxy port should be Valid port number. For Example: 80, 8080, 21, 11000, 12000">
+
+                  </fieldset>
+                  <fieldset>
+                    <label for="bypassList">Bypass proxy for these hosts (optional)</label>
+                    <textarea id="proxyBypassList" name="bypassList" placeholder="localhost;*.yahoo.com;*.youtube.com;192.168.1.0/24" title="Bypass Proxy for Specific Hosts. For Example: localhost;*.yahoo.com;*.youtube.com;192.168.1.0/24"></textarea>
+                  </fieldset>
+                </section>
+              </fieldset>
+					<div id="btnProxyProfile">
+						<button type="submit" value="Save proxy settings" title="Save proxy settings" id="set">Save</button>    <button type="submit" value="Delete" id="delProxy" style="cursor: not-allowed" disabled>Delete</button>
+					</div>
+            </form>
+    </div>
+    <script src="js/options.js"></script>
+    <div id="optionsPageBgIcon"></div>
+</body>
+</html>

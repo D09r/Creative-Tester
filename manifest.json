@@ -1,0 +1,49 @@
+{
+    "manifest_version": 2,
+	"name": "__MSG_extName__",
+	"version": "0.4.9",
+	"description": "__MSG_extDescription__",
+    "short_name": "Creative Tester",
+    "default_locale": "en",
+    "options_page": "options.html",
+    "incognito": "split",
+    "browser_action": {
+        "default_icon": "img/fi/mars16.png",
+        "default_title": "Creative Tester using Live HTTP Headers, Proxy, User-Agent.",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "page": "background.html",
+        "persistent": true
+      },
+    "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["js/spoofer_ua.js"],
+      "run_at" : "document_start",
+      "all_frames": true
+    }
+  ],
+    "icons": {
+        "16": "img/fi/mars16.png",
+        "32": "img/fi/mars32.png",
+        "64": "img/fi/mars64.png",
+        "128": "img/fi/mars128.png",
+        "256": "img/fi/mars512.png"
+  },
+    "author": "D09r",
+    "devtools_page": "ct/creative-tester.html",
+    "omnibox": { "keyword" : "ct"},
+    "homepage_url": "https://chrome.google.com/webstore/detail/creative-tester-live-http/ibbejlanbkoaepocgcebajilofpnappm",
+    "permissions": [
+        "proxy",
+        "storage",
+        "tabs",
+        "notifications",
+        "background",
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+}

@@ -1,0 +1,83 @@
+/**
+* * Howdy!! p1ngM3 @D09r
+*
+* * Creative Tester - Live HTTP Headers
+* * Version 0.4.9
+* * Author: Dinesh Kumar
+* * https://www.linkedin.com/in/hack3r
+* * Repository: https://github.com/D09r
+*
+*/
+
+#menu {
+    margin: 2px 0;
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+#menu .item {
+    padding: 4px 25px;
+    -webkit-padding-start: 6px;
+    margin: 0 2px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#menu .item:hover {
+    padding: 3px 24px;
+    -webkit-padding-start: 5px;
+    border: solid 1px #bcd;
+    border-radius: 3px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(0.4, hsl(215, 67%, 97%)), color-stop(0.41, hsl(213, 48%, 95%)));
+}
+
+#menu .item:active {
+    padding: 3px 24px;
+    -webkit-padding-start: 5px;
+    border: solid 1px #abc;
+    border-radius: 3px;
+    background: #dde7f2 none;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e8eef4), color-stop(1, #f5f9f4));
+}
+
+#menu .item img {
+    vertical-align: text-top;
+}
+
+#menu .icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+#menu .item span {
+    -webkit-padding-start: 4px;
+}
+
+#menu .item select {
+    font-family: sans-serif;
+	font-size: 16px;
+	outline: none;
+    cursor: pointer;
+    max-width: 106px;
+}
+
+#menu .separator {
+    height: 0;
+    margin: 3px 2px;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+#menuError, #separatorError {
+    display: none;
+}
+
+.item:active {
+    background-color: mediumpurple;
+}
+
+.activeProxy {
+    visibility: hidden;
+}

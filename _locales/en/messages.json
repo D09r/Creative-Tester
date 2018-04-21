@@ -1,0 +1,66 @@
+{
+  "extName":  {
+    "message": "Creative Tester - Live HTTP Headers",
+    "description": "Creative Tester using Live HTTP Headers, Proxy, User-Agent."
+  },
+  "extDescription": {
+    "message": "A free Chrome extension to test the Creative (ads) and Website using Live HTTP Headers, Proxy, User-Agent.",
+    "description": "A free Chrome extension to test the Creative (ads) and Website using Live HTTP Headers, Proxy, User-Agent."
+  },
+  "menuListGeneral": {
+    "message": "General",
+    "description": "General"
+  },
+  "menuListProxyProfiles": {
+    "message": "Proxy Profiles",
+    "description": "Proxy Profiles"
+  },
+  "menuListHelp": {
+    "message": "Help",
+    "description": "Help"
+  },
+  "menuListAbout": {
+    "message": "About",
+    "description": "About"
+  },
+  "autoReload": {
+    "message": "Refresh Current Tab on Proxy Profile changes",
+    "description": "Refresh Current Tab on Proxy Profile changes"
+  },
+  "autoTimeout": {
+    "message": "Set TimeOut to disable Manual Proxy",
+    "description": "Set TimeOut to disable Manual Proxy"
+  },
+  "turnNotify": {
+    "message": "Turn On/Off Notifications",
+    "description": "Turn On/Off Notifications"
+  },
+  "persistentAuth": {
+    "message": " Persistent Proxy Authentication",
+    "description": " Persistent Proxy Authentication"
+  },
+  "feedbackTitle": {
+    "message": "I'd love to hear your feedback!",
+    "description": "I'd love to hear your feedback!"
+  },
+  "feedbackLink": {
+    "message": "Write your invaluable comments",
+    "description": "Write your invaluable comments"
+  },
+  "menuPopSettings": {
+    "message": "Settings",
+    "description": "Settings"
+  },
+  "menuPopNoProxy": {
+    "message": "Disable Proxy",
+    "description": "Disable Proxy"
+  },
+  "menuPopSysProxy": {
+    "message": "System Proxy",
+    "description": "System Proxy"
+  },
+  "menuPopNewProfile": {
+    "message": "Add Proxy",
+    "description": "Add Proxy"
+  }
+}

@@ -1,0 +1,271 @@
+/**
+* * Howdy!! p1ngM3 @D09r
+*
+* * Creative Tester - Live HTTP Headers
+* * Version 0.4.9
+* * Author: Dinesh Kumar
+* * https://www.linkedin.com/in/hack3r
+* * Repository: https://github.com/D09r
+*
+*/
+
+body {
+	font-family: 'Open Sans', sans-serif;
+    text-decoration-style: none;
+}
+
+input {
+    background-color: rgba(0,0,0,.075);
+}
+
+span {
+    margin: 1px;
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 20px;
+    padding-right: 50px;
+}
+
+input[type="submit"] {
+    margin-left: -50px;
+    height: 25px;
+    width: 50px;
+    background: blue;
+    color: white;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.trafficTable {
+    width: 100% !important;
+    font-size: 14px;
+}
+.trafficTable th {
+    background-color: #b3b3b3;  /*#bfbfbf #204060 #bfbfbf*/
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.7) 30%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,0) 100%);
+    font-weight: bold;
+    display: table-cell;
+    border: solid #eee;
+    border-style: ridge;
+    border-width: 0 1px 1px 0;
+    padding: 5px;
+}
+.trafficTable tr:hover {
+    background-color: rgba(3,3,102,0.1);
+    cursor: pointer;
+}
+.trafficTable tr {
+    padding: 2px;
+    background-color: rgba(245,245,245,0.3);
+}
+.trafficTable td {
+    border: solid #eee;
+    border-width: 0 1px 1px 0;
+    padding: 4px;
+}
+
+.sortIcon {
+    background: url(/ctester/img/sort.gif) no-repeat 99%;
+}
+
+#tagsDiv {
+    display: none;
+/*    visibility: hidden;*/
+}
+
+#infoIncognito {
+    display:none;
+}
+
+.nonssl {
+    -webkit-border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+    background-color: #D6A4A1;
+    font-family: monospace;
+    color: #404040;
+}
+
+.redirect {
+    -webkit-border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+    background-color: #ff6666;
+    font-family: monospace;
+    color: #404040;
+}
+
+.flash {
+    -webkit-border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+    background-color: #ffcc66;
+    font-family: monospace;
+    color: #404040;
+}
+
+.video {
+    -webkit-border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+    background-color: #809fff;
+    font-family: monospace;
+    color: #404040;
+}
+
+.notfound {
+    -webkit-border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+    background-color: #adaaa4;
+    font-family: monospace;
+    color: #404040;
+}
+
+.badrequest {
+    -webkit-border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+    background-color: #ceb8a7;
+    font-family: monospace;
+    color: #404040;
+}
+
+.others {
+    -webkit-border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+    background-color: #c2c6ce;
+    font-family: monospace;
+    color: #404040;
+}
+
+.btnCopy {
+    position: relative;
+    visibility: hidden;
+    float: left;
+    z-index: 1;
+    display: inline;
+    cursor:pointer;
+}
+
+.headerGenTable {
+    border: none !important;
+}
+
+.headerGenTable tr {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.headerGenTable td {
+    padding-right: 9px;
+}
+
+.headerGenTableTd {
+    word-break: break-all;
+}
+
+#dList {
+    padding-top: 20px;
+/*    padding-left: 12px;*/
+    list-style-type: none;
+}
+
+/*
+#exportIcon {
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size:14px;
+    background: #336699;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+
+#exportIcon:hover {
+    background: #bfbfbf;
+}
+*/
+
+.tooltip .tooltip-inner {
+    background-color: #00264d;
+    font-family: sans-serif;
+}
+
+.tooltip .tooltip-arrow {
+    border-bottom-color: #00264d;
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+/* call chain tree structure */
+ul.tree, ul.tree ul {
+    font-family: sans-serif;
+    list-style-type: none;
+    background: url(../img/vline.png) repeat-y;
+    margin: 0;
+    padding: 0;
+}
+   
+ul.tree ul {
+    margin-left: 10px;
+}
+
+ul.tree li {
+    margin: 0;
+    padding: 0 12px;
+    line-height: 20px;
+    background: url(../img/node.png) no-repeat;
+    font-weight: normal;
+}
+  
+ul.tree li.last {
+    background: #fff url(../img/lastnode.png) no-repeat;
+}
+
+#ctPageBgIcon {
+    content: url(../../img/fi/mars256.png);
+    opacity: 0.05;
+    bottom: 16;
+    right: 16;
+    position: fixed;
+    z-index: -1;
+}
+
+#scrollup {
+    position: fixed;
+    top: 95%;
+    right: 2%;
+    z-index: 9;
+    display: none;   
+    color: rgba(0,0,0,.3);
+    font-size: 30px;
+    cursor: pointer;    
+}
+
+.iconLoadAnimate {
+	animation-name: rotateThis;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes rotateThis {
+	from { transform: scale( 1 ) rotate( 0deg );   }
+	to   { transform: scale( 1 ) rotate( 360deg ); }
+}
